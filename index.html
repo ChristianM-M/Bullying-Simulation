@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" href="favico.png" type="image/png" sizes="16x16">
+
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+
+  <title> Bullying Simulation </title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- Header start -->
+    <div class="row">
+      <div class="col-2">
+        <img class="img-fluid" src="https://youthradio.org/wp-content/themes/youthradio-v2/assets/images/s/footer-logo.png">
+      </div>
+
+      <div class="col-10">
+        <h1 class="display-1 header header-color">School Bully Experiment</h1>
+      </div>
+
+    </div>
+
+    <!-- Header end -->
+
+    <!-- Start game -->
+    <div class="row" id="Start">
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+        <!--<img class="img-fluid mx-auto d-block" src="https://c1.staticflickr.com/1/231/497345495_f3480418bb_b.jpg">-->
+
+        <div class="border border-dark text-center m-3 p-3 whatever">
+          <p>Q: Once Timmy sees the picture, does he report it, ignore it, or does he take it as a joke and laugh?</p>
+        </div>
+
+        <div class="row">
+          <div class="col-4 text-center p-3" id="Report1" onclick="Response()">
+            <button type="button" class="btn btn-dark">
+              Report
+            </button>
+          </div>
+          <div class="col-4 text-center p-3" id="Ignore" onclick="Response2()">
+            <button type="button" class="btn btn-dark">
+                Ignore
+              </button>
+          </div>
+          <div class="col-4 text-center p-3" id="Respond" onclick="Response3()">
+            <button type="button" class="btn btn-dark">
+                Respond
+              </button>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
+    <!-- Start game  end div-->
+
+    <!-- Result 1 start -->
+    <div class="row" id="Result1" hidden>
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+        <!--<img class="img-fluid mx-auto d-block" src="https://c1.staticflickr.com/1/231/497345495_f3480418bb_b.jpg">-->
+
+        <div class="border border-dark text-center m-3 p-3 answer-boxes">
+          <p>The school talks to the bully and suspends them. After a while the bully returns and starts to bully you again.</p>
+          <p>Q: Do you want to try and report them again or physically fight back?</p>
+        </div>
+        <div class="row">
+          <div class="col-6 text-center p-3" id="Report2" onclick="Response1A()">
+            <button type="button" class="btn btn-dark">
+              Report Again
+            </button>
+          </div>
+
+          <div class="col-6 text-center p-3" id="Fight" onclick="Response2A()">
+            <button type="button" class="btn btn-dark">
+                Fight Back
+              </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
+    <!-- Result 1 end-->
+    <div class="border border-dark text-center m-3 p-3 answer-boxes" hidden id="Result1C">
+      <p>Although this is the second time you reported the bully, the problem didn’t stop. In result, you were left with no choice but to stay there and tolerate the bullying or switch schools. You decided to switch schools and at your new school you still got bullied for being an outsider but you made it to graduation.</p>
+    </div>
+
+    <div class="border border-dark text-center m-3 p-3 answer-boxes" hidden id="Result2C">
+      <p>Because you decided to fight back, the administration didn’t care to hear your side of the story. Instead they suspended you from school which later went on your permanent record.</p>
+    </div>
+
+    <!-- Result 1 start -->
+    <div class="row" id="Result2" hidden>
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+        <!--<img class="img-fluid mx-auto d-block" src="https://c1.staticflickr.com/1/231/497345495_f3480418bb_b.jpg">-->
+          <div class="border border-dark text-center m-3 p-3 answer-boxes" >
+            <p>After you decided to ignore the post made about you, you went to school. While your in the hallway, people constantly started laughing at you.</p>
+            <p>Q: Do you ask them why, tell the administration, or walk away?</p>
+          </div>
+          <div class="row">
+            <div class="col-4 text-center p-3" id="Ask" onclick="ResponseA()">
+              <button type="button" class="btn btn-dark">
+              Ask
+            </button>
+            </div>
+            <div class="col-4 text-center p-3" id="Tell" onclick="ResponseB()">
+              <button type="button" class="btn btn-dark">
+                Tell
+              </button>
+            </div>
+            <div class="col-4 text-center p-3" id="Walk Away" onclick="ResponseC()">
+              <button type="button" class="btn btn-dark">
+                Walk Away
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
+    <!-- Result 1 end-->
+    <div class="border border-dark text-center m-3 p-3 answer-boxes" hidden id="Result1B">
+      <p>After you ask the people why they were laughing at you, they responded by saying how you’re a punk and they will never be your friend.
+  </p>
+    </div>
+
+    <div class="border border-dark text-center m-3 p-3 answer-boxes" hidden id="Result2B">
+      <p>You told the principle that some kids were laughing at you and the principle said that you were over reacting and you should get over it.
+  </p>
+    </div>
+
+    <div class="border border-dark text-center m-3 p-3 answer-boxes" hidden id="Result3B">
+      <p>You avoided the problem for now, but as you walk away you can tell that this is not going to stop.
+  </p>
+    </div>
+
+<!-- Result Respond answer -->
+
+<div class="border border-dark text-center m-3 p-3 answer-boxes" hidden id="Result3">
+  <p>Because you responded to the post, the administration found who you are and you were suspended from school because administration classified what you said as pure retaliation and not self defense.</p>
+</div>
+
+    <!-- Container fluid close, dont delete -->
+  </div>
+  <!--
+
+  <div class="border border-dark text-center m-3 p-3 whatever" hidden id="Result3">
+    <p>Because you responded to the post, the administration found who you are and you were suspended from school because administration classified what you said as pure retaliation and not self defense.</p>
+  </div>
+
+  <div class="border border-dark text-center m-3 p-3 whatever" hidden id="Result2">
+    <p>After you decided to ignore the post made about you, you went to school. While your in the hallway, people constantly started laughing at you.</p>
+    <div>
+      <p>Q: Do you ask them why, tell the administration, or walk away?</p>
+    </div>
+    <div class="row">
+      <div class="col-4 text-center p-3" id="Ask" onclick="ResponseA()">
+        <button type="button" class="btn btn-dark">
+        Ask
+      </button>
+      </div>
+      <div class="col-4 text-center p-3" id="Tell" onclick="ResponseB()">
+        <button type="button" class="btn btn-dark">
+          Tell
+        </button>
+      </div>
+      <div class="col-4 text-center p-3" id="Walk Away" onclick="ResponseC()">
+        <button type="button" class="btn btn-dark">
+          Walk Away
+        </button>
+      </div>
+    </div>
+  </div>
+
+    <div class="border border-dark text-center m-3 p-3 whatever" hidden id="Result1B">
+      <p>After you ask the people why they were laughing at you, they responded by saying how you’re a punk and they will never be your friend
+</p>
+    </div>
+
+    <div class="border border-dark text-center m-3 p-3 whatever" hidden id="Result2B">
+      <p>You told the principle that some kids were laughing at you and the principle said that you were over reacting and you should get over it.
+  </p>
+    </div>
+
+    <div class="border border-dark text-center m-3 p-3 whatever" hidden id="Result3B">
+      <p>You avoided the problem for now, but as you walk away you can tell that this is not going to stop.
+  </p>
+    </div>
+
+    <div class="border border-dark text-center m-3 p-3 whatever" hidden id="Result1a">
+      <p>The school talks to the bully and suspends them. After a while the bully returns and starts to bully you again.</p>
+      <p>Q: Do you want to try and report them again or physically fight back?</p>
+    </div>
+
+  </div>
+
+
+
+
+
+ -->
+
+
+
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="libs/jquery-3.3.1.min.js">
+  </script>
+
+  <script src="libs/pooper.min.js">
+  </script>
+  <script src="libs/bootstrap.min.js">
+  </script>
+  <script src="bully.js">
+  </script>
+</body>
+
+</html>

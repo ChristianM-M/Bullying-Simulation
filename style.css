@@ -1,0 +1,36 @@
+body {
+  background-color: #545f67;
+  color: black;
+
+}
+
+.bullypic{
+  background-image:url("https://drive.google.com/file/d/1g1Tp7H2S_hxLxtFQqJ7-V1Q6tlXcp6zE/view");
+  height:80vh;
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size:auto;
+}
+
+.whatever{
+  background-color: white;
+  font-size: 50px;
+}
+
+.header{
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.text-background{
+  background: white;
+  font-size: 20px;
+}
+
+.header-color{
+  color: white;
+}
+
+.answer-boxes{
+  background-color: white;
+  font-size: 30px;
+}
